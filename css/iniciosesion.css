@@ -36,7 +36,7 @@ body {
 
 h1 {
     font-size: 1.8rem; /* Más compacto */
-    margin-bottom: 15px;
+    margin-bottom: 24px;
     color: #fff;
 }
 
@@ -50,6 +50,7 @@ h1 {
 /* Estilo de los inputs */
 .input-container {
     position: relative;
+    padding: 12px;
 }
 
 .input-container input {
