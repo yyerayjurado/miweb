@@ -1,0 +1,124 @@
+/* Estilo del contenedor principal */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #4c67f6, #a64af5);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px 30px; /* Más ajustado horizontalmente */
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+    max-width: 350px; /* Tamaño máximo fijo */
+    width: 90%; /* Responde en pantallas pequeñas */
+}
+
+/* Animación de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+h1 {
+    font-size: 1.8rem; /* Más compacto */
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+/* Estilo del formulario */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Más espacio entre elementos */
+}
+
+/* Estilo de los inputs */
+.input-container {
+    position: relative;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 12px 15px; /* Mayor altura para mejor usabilidad */
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    outline: none;
+    color: #333;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Asegura que el padding no rompa el diseño */
+}
+
+.input-container input:focus {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.input-container label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label {
+    top: -12px;
+    font-size: 0.85rem; /* Etiqueta más compacta */
+    color: #fff;
+}
+
+/* Botón de ingreso */
+.btn {
+    padding: 12px 20px; /* Botón más grande */
+    background: #ff7eb3;
+    color: #fff;
+    border: none;
+    border-radius: 8px; /* Bordes más redondeados */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold; /* Resalta el texto */
+    transition: background 0.3s ease, transform 0.2s ease;  
+}
+
+.btn:hover {
+    background: #ff5b9f;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el mouse */
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* Más pequeño en móviles */
+    }
+
+    .login-container {
+        padding: 30px 20px; /* Menos padding horizontal */
+    }
+
+    .btn {
+        padding: 10px 15px; /* Botón más compacto */
+        font-size: 0.9rem;
+    }
+}
