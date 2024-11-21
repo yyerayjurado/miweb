@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transferencia de Archivos | YERAYSERVER</title>
+    <link rel="stylesheet" href="css/dashboard.css"> <!-- Reutilizando estilos -->
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <h1>Yeray Server</h1>
+        <nav>
+            <a href="dashboard.html" id="inicio">Volver al Panel</a>
+        </nav>
+    </div>
+
+    <!-- Contenido de la transferencia de archivos -->
+    <div class="dashboard-container">
+        <div class="card">
+            <h2>Subir Archivos</h2>
+            <p>Selecciona un archivo para cargar al servidor.</p>
+            <input type="file" id="fileInput" multiple>
+            <button class="btn" id="uploadButton">Subir Archivos</button>
+        </div>
+
+        <div class="card">
+            <h2>Archivos Disponibles</h2>
+            <p>Lista de archivos subidos al servidor:</p>
+            <ul id="fileList">
+                <li>No hay archivos disponibles</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Simulación de subida de archivos
+        document.getElementById("uploadButton").addEventListener("click", function () {
+            const input = document.getElementById("fileInput");
+            const fileList = document.getElementById("fileList");
+
+            if (input.files.length > 0) {
+                fileList.innerHTML = ""; // Limpia la lista actual
+                Array.from(input.files).forEach(file => {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = `Archivo subido: ${file.name}`;
+                    fileList.appendChild(listItem);
+                });
+                alert("Archivos subidos exitosamente (simulado).");
+            } else {
+                alert("Por favor selecciona un archivo.");
+            }
+        });
+    </script>
+</body>
+</html>

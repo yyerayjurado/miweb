@@ -7,6 +7,7 @@ body {
     display: flex;
     flex-direction: column;
     color: #fff;
+    overflow-x: hidden; /* Elimina el scroll horizontal */
 }
 
 /* Estilo de la barra de navegación */
@@ -41,8 +42,10 @@ body {
     flex: 1;
     padding: 20px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap; /* Permite que los paneles se ajusten a múltiples filas */
     gap: 20px;
+    justify-content: center; /* Centra los paneles */
+    box-sizing: border-box; /* Evita que los márgenes se acumulen fuera del contenedor */
 }
 
 .card {
@@ -52,6 +55,12 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 250px; /* Ancho de la tarjeta */
+    height: 250px; /* Altura igual al ancho para hacerlo cuadrado */
+    display: flex; /* Centra el contenido */
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
 }
 
 .card:hover {
@@ -91,11 +100,18 @@ body {
 /* Media Query para pantallas pequeñas */
 @media (max-width: 768px) {
     .dashboard-container {
-        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
     }
 
     .navbar h1 {
         font-size: 1.2rem;
+    }
+
+    .card {
+        width: 100%; /* Ocupa todo el ancho disponible en pantallas pequeñas */
+        height: auto; /* Altura automática en pantallas pequeñas */
+        padding: 15px;
     }
 
     .card h2 {

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat en Línea | YERAYSERVER</title>
+    <link rel="stylesheet" href="css/dashboard.css"> <!-- Usando el mismo CSS -->
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <h1>Yeray Server</h1>
+        <nav>
+            <a href="dashboard.html" id="inicio">Volver al Panel</a>
+        </nav>
+    </div>
+
+    <!-- Contenido del chat -->
+    <div class="dashboard-container">
+        <div class="card" style="width: 100%; max-width: 700px; margin: 0 auto;">
+            <h2>Chat en Línea</h2>
+            <div id="chatWindow" style="background: rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 10px; height: 300px; overflow-y: auto;">
+                <p><strong>Admin:</strong> Bienvenido al chat en línea.</p>
+            </div>
+            <form id="chatForm" style="margin-top: 10px; display: flex; gap: 10px;">
+                <input type="text" id="chatInput" placeholder="Escribe tu mensaje..." style="flex: 1; padding: 8px; border-radius: 8px; border: none;">
+                <button type="submit" class="btn" style="padding: 8px 15px;">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Manejo del chat
+        const chatWindow = document.getElementById("chatWindow");
+        const chatForm = document.getElementById("chatForm");
+        const chatInput = document.getElementById("chatInput");
+
+        chatForm.addEventListener("submit", function (e) {
+            e.preventDefault(); // Evita el envío del formulario
+
+            const userMessage = chatInput.value.trim();
+            if (userMessage !== "") {
+                const messageElement = document.createElement("p");
+                messageElement.innerHTML = `<strong>Tú:</strong> ${userMessage}`;
+                chatWindow.appendChild(messageElement);
+                chatWindow.scrollTop = chatWindow.scrollHeight; // Desplázate al final del chat
+                chatInput.value = ""; // Limpia el campo de entrada
+
+                // Simulación de respuesta automática
+                setTimeout(() => {
+                    const adminMessage = document.createElement("p");
+                    adminMessage.innerHTML = `<strong>Admin:</strong> Recibí tu mensaje: "${userMessage}"`;
+                    chatWindow.appendChild(adminMessage);
+                    chatWindow.scrollTop = chatWindow.scrollHeight;
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>

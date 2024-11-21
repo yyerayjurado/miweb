@@ -9,34 +9,82 @@
 <body>
     <!-- Barra de navegación -->
     <div class="navbar">
-        <h1>Panel de Control</h1>
+        <h1>Yeray Server</h1>
         <nav>
-            <a href="#">Inicio</a>
-            <a href="#">Perfil</a>
-            <a href="#">Configuración</a>
-            <a href="#">Cerrar Sesión</a>
+            <a href="#" id="inicio">Inicio</a>
+            <a href="#" id="perfil">Perfil</a>
+            <a href="#" id="configuracion">Configuración</a>
+            <a href="#" id="cerrarSesion">Cerrar Sesión</a>
         </nav>
     </div>
 
-    <!-- Contenido del panel -->
     <div class="dashboard-container">
         <div class="card">
-            <h2>Usuarios Activos</h2>
-            <p>Actualmente hay <strong>24</strong> usuarios en línea.</p>
-            <a href="#" class="btn">Ver Detalles</a>
+            <h2>Transferencia de Archivos</h2>
+            <p>Gestiona tus archivos fácilmente desde esta sección.</p>
+            <button class="btn" id="fileTransfer">Ir a Transferencia</button>
         </div>
-
-        <div class="card">
-            <h2>Estadísticas del Servidor</h2>
-            <p>Uso del CPU: <strong>45%</strong><br>Uso de la memoria: <strong>32%</strong></p>
-            <a href="#" class="btn">Ver Más</a>
-        </div>
-
+    
+        <div class="dashboard-container">
+            <div class="card">
+                <h2>Chat en Línea</h2>
+                <p>Haz clic para ir al chat en línea.</p>
+                <button class="btn" id="chatButton">Ir al Chat</button>
+            </div>
+    
         <div class="card">
             <h2>Notificaciones</h2>
             <p>Tienes <strong>3</strong> notificaciones nuevas.</p>
-            <a href="#" class="btn">Revisar</a>
+            <button class="btn" id="notificaciones">Revisar</button>
         </div>
     </div>
+    
+    <script>
+        // Redirige a la página de transferencia de archivos
+        document.getElementById("fileTransfer").addEventListener("click", function () {
+            window.location.href = "upload.html";
+        });
+    </script>
+    <!-- Script de funcionalidad -->
+    <script>
+        // Botón "Inicio"
+        document.getElementById("inicio").addEventListener("click", function() {
+            alert("Has hecho clic en Inicio.");
+        });
+
+        // Botón "Perfil"
+        document.getElementById("perfil").addEventListener("click", function() {
+            alert("Funcionalidad de perfil en desarrollo.");
+        });
+
+        // Botón "Configuración"
+        document.getElementById("configuracion").addEventListener("click", function() {
+            alert("Redirigiendo a configuración...");
+            // Simula redirección
+            window.location.href = "#";
+        });
+
+        // Botón "Cerrar Sesión"
+        document.getElementById("cerrarSesion").addEventListener("click", function() {
+            if (confirm("¿Seguro que deseas cerrar sesión?")) {
+                window.location.href = "index.html"; // Redirige al inicio de sesión
+            }
+        });
+
+        // Botón "Ver Detalles" de Usuarios Activos
+        document.getElementById("usuariosActivos").addEventListener("click", function() {
+            alert("Hay 24 usuarios activos actualmente. Funcionalidad adicional en desarrollo.");
+        });
+
+        // Botón "Revisar" de Notificaciones
+        document.getElementById("notificaciones").addEventListener("click", function() {
+            alert("Tienes 3 notificaciones nuevas:\n1. Actualización completada.\n2. Usuario admin conectado.\n3. Nueva solicitud pendiente.");
+        });
+
+        // Redirige a la página de chat
+        document.getElementById("chatButton").addEventListener("click", function () {
+            window.location.href = "chat.html";
+        });
+    </script>
 </body>
 </html>

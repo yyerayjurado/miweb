@@ -27,7 +27,8 @@
         // Usuarios simulados para la autenticación
         const validUsers = [
             { username: "admin", password: "1234" },
-            { username: "yeray", password: "server2024" }
+            { username: "yeray", password: "server2024" },
+            { username: "albertocarapito", password: "soyputo" },
         ];
 
         // Manejador de envío del formulario
@@ -43,7 +44,7 @@
 
             if (userFound) {
                 // Redirigir al panel de control
-                window.location.href = "C:\Users\manana\Desktop\miweb\dashboard.html";
+                window.location.href = "dashboard.html";
             } else {
                 // Mostrar mensaje de error
                 message.textContent = "Usuario o contraseña incorrectos.";
