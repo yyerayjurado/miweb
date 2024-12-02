@@ -24,13 +24,12 @@
             <p>Gestiona tus archivos fácilmente desde esta sección.</p>
             <button class="btn" id="fileTransfer">Ir a Transferencia</button>
         </div>
-    
-        <div class="dashboard-container">
-            <div class="card">
+
+        <div class="card">
                 <h2>Chat en Línea</h2>
                 <p>Haz clic para ir al chat en línea.</p>
                 <button class="btn" id="chatButton">Ir al Chat</button>
-            </div>
+        </div>
     
         <div class="card">
             <h2>Notificaciones</h2>
@@ -69,11 +68,6 @@
             if (confirm("¿Seguro que deseas cerrar sesión?")) {
                 window.location.href = "index.html"; // Redirige al inicio de sesión
             }
-        });
-
-        // Botón "Ver Detalles" de Usuarios Activos
-        document.getElementById("usuariosActivos").addEventListener("click", function() {
-            alert("Hay 24 usuarios activos actualmente. Funcionalidad adicional en desarrollo.");
         });
 
         // Botón "Revisar" de Notificaciones

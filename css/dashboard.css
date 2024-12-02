@@ -3,10 +3,9 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #4c67f6, #a64af5);
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    color: #fff;
+    color: #ffffff;
     overflow-x: hidden; /* Elimina el scroll horizontal */
 }
 
@@ -39,86 +38,107 @@ body {
 
 /* Contenedor principal */
 .dashboard-container {
-    flex: 1;
+    flex: 4;
     padding: 20px;
     display: flex;
     flex-wrap: wrap; /* Permite que los paneles se ajusten a múltiples filas */
-    gap: 20px;
-    justify-content: center; /* Centra los paneles */
-    box-sizing: border-box; /* Evita que los márgenes se acumulen fuera del contenedor */
+    gap: 10px; /* Reduce el espacio entre las tarjetas */
+    justify-content: flex-start; /* Centra los paneles */
+    align-items: flex-start; /* Alinea verticalmente los paneles */
+    box-sizing: border-box;
 }
 
+/* Tarjetas */
 .card {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    padding: 20px;
+    padding: 10px; /* Reduce el espacio interno */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 250px; /* Ancho de la tarjeta */
-    height: 250px; /* Altura igual al ancho para hacerlo cuadrado */
-    display: flex; /* Centra el contenido */
-    flex-direction: column;
-    justify-content: center; /* Centra el contenido verticalmente */
-    align-items: center; /* Centra el contenido horizontalmente */
+    width: 200px; /* Reduce el tamaño de las tarjetas */
+    height: 200px; /* Mantiene un diseño cuadrado */
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Inicialmente invisible */
+    animation: fadeIn 0.8s forwards; /* Animación de aparición */
 }
 
+/* Efecto hover en las tarjetas */
 .card:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) rotate(2deg); /* Aumenta el tamaño y rota ligeramente */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Títulos y texto */
 .card h2 {
-    margin: 0 0 10px;
-    font-size: 1.3rem;
+    margin: 0 0 5px; /* Reduce el margen inferior */
+    font-size: 1.1rem; /* Reduce el tamaño del texto */
 }
 
 .card p {
     margin: 0;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.8);
 }
 
 /* Botón interactivo */
 .btn {
     display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
+    margin-top: 10px; /* Reduce el margen superior */
+    padding: 8px 15px; /* Reduce el tamaño del botón */
     background: #ff7eb3;
     color: #fff;
     text-decoration: none;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     transition: background 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
 }
 
+/* Efecto hover en botones */
 .btn:hover {
     background: #ff5b9f;
-    transform: scale(1.05);
+    transform: scale(1.05); /* Aumenta el tamaño */
+}
+
+/* Efecto de rebote al hacer clic en el botón */
+.btn:active {
+    transform: scale(0.95); /* "Hunde" el botón al hacer clic */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Inicia desde abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Termina en su posición original */
+    }
 }
 
 /* Media Query para pantallas pequeñas */
 @media (max-width: 768px) {
     .dashboard-container {
         padding: 10px;
-        gap: 10px;
-    }
-
-    .navbar h1 {
-        font-size: 1.2rem;
+        gap: 5px; /* Reduce aún más el espacio entre tarjetas en pantallas pequeñas */
     }
 
     .card {
-        width: 100%; /* Ocupa todo el ancho disponible en pantallas pequeñas */
-        height: auto; /* Altura automática en pantallas pequeñas */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        height: auto; /* Ajusta la altura automáticamente */
         padding: 15px;
     }
 
     .card h2 {
-        font-size: 1.1rem;
+        font-size: 1rem; /* Reduce el tamaño del título */
     }
 
     .card p {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 }
